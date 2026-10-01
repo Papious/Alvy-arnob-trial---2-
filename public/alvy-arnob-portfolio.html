@@ -32,6 +32,17 @@
       padding: 0;
     }
 
+    /* ===== DARK SLIM SCROLLBAR ===== */
+    html, * {
+      scrollbar-width: thin;
+      scrollbar-color: #2e2e2e #000;
+    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: #2e2e2e; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+    ::-webkit-scrollbar-corner { background: #000; }
+
     html {
       scroll-behavior: smooth;
     }
@@ -2296,6 +2307,31 @@
       color: var(--gold);
     }
 
+    /* Lightbox close button: pinned to the screen corner so it is always visible */
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 22px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, .65);
+      border: 1px solid rgba(255, 255, 255, .28);
+      color: #fff;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1010;
+      transition: color .2s, border-color .2s, background .2s;
+    }
+
+    .lightbox-close:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      background: rgba(0, 0, 0, .85);
+    }
+
     .lb-img-wrap {
       max-width: min(800px, 90vw);
       max-height: 55vh;
@@ -2933,6 +2969,32 @@
           </ul>
         </div>
       </article>
+
+      <article class="fw-item rev-up">
+        <div class="fw-media"><video src="https://res.cloudinary.com/zyzib8eu/video/upload/v1790725187/5.mp4" controls preload="metadata" playsinline></video></div>
+        <div class="fw-details">
+          <h3 class="fw-title">Featured Project Title</h3>
+          <p class="fw-desc">Short description of this featured piece — replace with real project copy when the media is ready.</p>
+          <div class="fw-resp-label">Responsibilities</div>
+          <ul class="fw-resp-list">
+            <li>Role or contribution one</li>
+            <li>Role or contribution two</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="fw-item rev-up">
+        <div class="fw-media"><video src="https://res.cloudinary.com/zyzib8eu/video/upload/v1790725155/6.mp4" controls preload="metadata" playsinline></video></div>
+        <div class="fw-details">
+          <h3 class="fw-title">Featured Project Title</h3>
+          <p class="fw-desc">Short description of this featured piece — replace with real project copy when the media is ready.</p>
+          <div class="fw-resp-label">Responsibilities</div>
+          <ul class="fw-resp-list">
+            <li>Role or contribution one</li>
+            <li>Role or contribution two</li>
+          </ul>
+        </div>
+      </article>
     </div>
 
         <div class="more-about rev-up">
@@ -3042,14 +3104,47 @@
       lifelong journey.</p>
     <div class="gal-wrap">
       <div class="gal-3">
-        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/IMG_0729.JPG" alt="Traditional artwork"><div class="gal-overlay"><span>View Artwork</span></div></div>
-        <div class="gal-item rev-up" style="transition-delay:.1s"><img src="/assets/Traditional%20work/IMG_0730.JPG" alt="Traditional artwork"><div class="gal-overlay"><span>View Artwork</span></div></div>
-        <div class="gal-item rev-up" style="transition-delay:.2s"><img src="/assets/Traditional%20work/IMG_0731.JPG" alt="Traditional artwork"><div class="gal-overlay"><span>View Artwork</span></div></div>
-      </div>
-      <div class="gal-3">
-        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/IMG_0732.JPG" alt="Traditional artwork"><div class="gal-overlay"><span>View Artwork</span></div></div>
-        <div class="gal-item rev-up" style="transition-delay:.1s"><img src="/assets/Traditional%20work/IMG_0733.JPG" alt="Traditional artwork"><div class="gal-overlay"><span>View Artwork</span></div></div>
-        <div class="gal-item rev-up" style="transition-delay:.2s"><img src="/assets/Traditional%20work/IMG_0734.JPG" alt="Traditional artwork"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/IMG_0729.jpg" data-full="/assets/Traditional%20work/IMG_0729.JPG" alt="Traditional artwork 1" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_0730.jpg" data-full="/assets/Traditional%20work/IMG_0730.JPG" alt="Traditional artwork 2" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/IMG_0731.jpg" data-full="/assets/Traditional%20work/IMG_0731.JPG" alt="Traditional artwork 3" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/IMG_0732.jpg" data-full="/assets/Traditional%20work/IMG_0732.JPG" alt="Traditional artwork 4" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_0733.jpg" data-full="/assets/Traditional%20work/IMG_0733.JPG" alt="Traditional artwork 5" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/IMG_0734.jpg" data-full="/assets/Traditional%20work/IMG_0734.JPG" alt="Traditional artwork 6" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/106289081_1183357875331417_6879217725594294410_n.jpg" data-full="/assets/Traditional%20work/106289081_1183357875331417_6879217725594294410_n.jpg" alt="Traditional artwork 7" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/116426589_1210366969297174_7093128583334673952_n.jpg" data-full="/assets/Traditional%20work/116426589_1210366969297174_7093128583334673952_n.jpg" alt="Traditional artwork 8" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/132888043_1328452584155278_4033375065006128332_n.jpg" data-full="/assets/Traditional%20work/132888043_1328452584155278_4033375065006128332_n.jpg" alt="Traditional artwork 9" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/140017401_1343980532602483_6674885424469207321_n.jpg" data-full="/assets/Traditional%20work/140017401_1343980532602483_6674885424469207321_n.jpg" alt="Traditional artwork 10" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/161733461_1382205038780032_3671836213403957643_n.jpg" data-full="/assets/Traditional%20work/161733461_1382205038780032_3671836213403957643_n.jpg" alt="Traditional artwork 11" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/197153710_1437368803263655_5001375577999525391_n.jpg" data-full="/assets/Traditional%20work/197153710_1437368803263655_5001375577999525391_n.jpg" alt="Traditional artwork 12" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/471614817_2350282998638893_3424355129330412804_n.jpg" data-full="/assets/Traditional%20work/471614817_2350282998638893_3424355129330412804_n.jpg" alt="Traditional artwork 13" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/475326452_2374799412853918_1562015005002563171_n.jpg" data-full="/assets/Traditional%20work/475326452_2374799412853918_1562015005002563171_n.jpg" alt="Traditional artwork 14" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/498026214_2479712469029278_4103396588826755612_n.jpg" data-full="/assets/Traditional%20work/498026214_2479712469029278_4103396588826755612_n.jpg" alt="Traditional artwork 15" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/92217592_1114591315541407_6359241050766180352_n.jpg" data-full="/assets/Traditional%20work/92217592_1114591315541407_6359241050766180352_n.jpg" alt="Traditional artwork 16" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_0736.jpg" data-full="/assets/Traditional%20work/IMG_0736.JPG" alt="Traditional artwork 17" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/IMG_0738.jpg" data-full="/assets/Traditional%20work/IMG_0738.JPG" alt="Traditional artwork 18" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/IMG_0739.jpg" data-full="/assets/Traditional%20work/IMG_0739.JPG" alt="Traditional artwork 19" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_0742.jpg" data-full="/assets/Traditional%20work/IMG_0742.JPG" alt="Traditional artwork 20" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/IMG_0743.jpg" data-full="/assets/Traditional%20work/IMG_0743.JPG" alt="Traditional artwork 21" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/IMG_0744.jpg" data-full="/assets/Traditional%20work/IMG_0744.JPG" alt="Traditional artwork 22" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_0745.jpg" data-full="/assets/Traditional%20work/IMG_0745.JPG" alt="Traditional artwork 23" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/IMG_0746.jpg" data-full="/assets/Traditional%20work/IMG_0746.JPG" alt="Traditional artwork 24" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/IMG_0747.jpg" data-full="/assets/Traditional%20work/IMG_0747.JPG" alt="Traditional artwork 25" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_0748.jpg" data-full="/assets/Traditional%20work/IMG_0748.JPG" alt="Traditional artwork 26" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/IMG_0751.jpg" data-full="/assets/Traditional%20work/IMG_0751.JPG" alt="Traditional artwork 27" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/IMG_0752.jpg" data-full="/assets/Traditional%20work/IMG_0752.JPG" alt="Traditional artwork 28" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_0753.jpg" data-full="/assets/Traditional%20work/IMG_0753.JPG" alt="Traditional artwork 29" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/IMG_0754.jpg" data-full="/assets/Traditional%20work/IMG_0754.JPG" alt="Traditional artwork 30" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/IMG_0755.jpg" data-full="/assets/Traditional%20work/IMG_0755.JPG" alt="Traditional artwork 31" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_0756.jpg" data-full="/assets/Traditional%20work/IMG_0756.JPG" alt="Traditional artwork 32" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/IMG_0757.jpg" data-full="/assets/Traditional%20work/IMG_0757.JPG" alt="Traditional artwork 33" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/IMG_0758.jpg" data-full="/assets/Traditional%20work/IMG_0758.JPG" alt="Traditional artwork 34" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_0759.jpg" data-full="/assets/Traditional%20work/IMG_0759.JPG" alt="Traditional artwork 35" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/IMG_0760.jpg" data-full="/assets/Traditional%20work/IMG_0760.JPG" alt="Traditional artwork 36" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/IMG_0761.jpg" data-full="/assets/Traditional%20work/IMG_0761.JPG" alt="Traditional artwork 37" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_0762.jpg" data-full="/assets/Traditional%20work/IMG_0762.JPG" alt="Traditional artwork 38" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.2s"><img src="/assets/Traditional%20work/thumbs/IMG_0763.jpg" data-full="/assets/Traditional%20work/IMG_0763.JPG" alt="Traditional artwork 39" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up"><img src="/assets/Traditional%20work/thumbs/IMG_3990.jpg" data-full="/assets/Traditional%20work/IMG_3990.jpg" alt="Traditional artwork 40" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
+        <div class="gal-item rev-up" style="transition-delay:0.1s"><img src="/assets/Traditional%20work/thumbs/IMG_4433.jpg" data-full="/assets/Traditional%20work/IMG_4433.jpg" alt="Traditional artwork 41" loading="lazy" decoding="async" onerror="this.onerror=null;this.src=this.dataset.full"><div class="gal-overlay"><span>View Artwork</span></div></div>
       </div>
     </div>
         <div class="more-about rev-up">
@@ -4011,12 +4106,12 @@
       let pageKey = 'traditional';
       if (page.id === 'page-digital') pageKey = 'digital';
       else if (page.id === 'page-featured') pageKey = 'featured';
-      const imgs = Array.from(page.querySelectorAll('.gal-item img')).map(i => i.src);
+      const imgs = Array.from(page.querySelectorAll('.gal-item img')).map(i => i.dataset.full || i.src);
       page.querySelectorAll('.gal-item').forEach((el) => {
         const img = el.querySelector('img');
         el.onclick = () => {
           if (!img) return; // placeholder slot — no lightbox
-          openLightbox(imgs, imgs.indexOf(img.src));
+          openLightbox(imgs, imgs.indexOf(img.dataset.full || img.src));
         };
       });
     }
